@@ -1,0 +1,15 @@
+anyio
+audioread
+fastapi
+h5py
+joblib
+keras
+numpy
+Pillow
+scikit-learn
+scipy
+tensorflow
+tensorflow-io-gcs-filesystem
+urllib3
+uvicorn
+librosa
