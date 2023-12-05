@@ -13,3 +13,4 @@ tensorflow-io-gcs-filesystem
 urllib3
 uvicorn
 librosa
+python-multipart
