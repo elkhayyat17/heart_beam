@@ -10,7 +10,7 @@ app = FastAPI(project_name="Dangerous Heartbeat Classification")
 async def read_root():
     return {"Hello": "World, Project name is : Dangerous Heartbeat Classification"}
 
-@app.post("/prediction")
+@app.post("/heartChecking")
 async def detect(voice: UploadFile):
     if voice.filename.split(".")[-1] not in ("wav", "mp3"):
         raise HTTPException(
@@ -23,4 +23,4 @@ async def detect(voice: UploadFile):
 
     prediction = await predict(audio, sample_rate)
 
-    return {"prediction": prediction}
+    return {"response": prediction}
