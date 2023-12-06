@@ -4,7 +4,17 @@ import librosa
 import numpy as np
 from model import predict
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(project_name="Dangerous Heartbeat Classification")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def read_root():
