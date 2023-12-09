@@ -3,7 +3,6 @@ from fastapi import APIRouter, UploadFile, HTTPException, FastAPI
 import librosa
 import numpy as np
 from model import predict
-
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(project_name="Dangerous Heartbeat Classification")
@@ -32,5 +31,21 @@ async def detect(voice: UploadFile):
     audio, sample_rate = librosa.load(io.BytesIO(audio_bytes), sr=None)
 
     prediction = await predict(audio, sample_rate)
+
+    if prediction == "murmur":
+        f = open("HeartChecking/Murmur.txt", "r")
+        return { "response": f.read() }
+    elif prediction == "normal":
+        f = open("HeartChecking/Normal.txt", "r")
+        return { "response": f.read() }
+    elif prediction == "artifact":
+        f = open("HeartChecking/Artifact.txt", "r")
+        return { "response": f.read() }
+    elif prediction == "extrastole":
+        f = open("HeartChecking/Extrasystole.txt", "r")
+        return { "response": f.read() }
+    elif prediction == "extrahls":
+        f = open("HeartChecking/ExtraHeartSound.txt", "r")
+        return { "response": f.read() }
 
     return {"response": prediction}
