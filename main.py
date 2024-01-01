@@ -1,9 +1,10 @@
 import io
-from fastapi import APIRouter, UploadFile, HTTPException, FastAPI
+from fastapi import UploadFile, HTTPException, FastAPI
 import librosa
 import numpy as np
 from model import predict
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 app = FastAPI(project_name="Dangerous Heartbeat Classification")
 
@@ -49,3 +50,19 @@ async def detect(voice: UploadFile):
         return { "response": f.read() }
 
     return {"response": prediction}
+
+@app.post("/skinChecking")
+async def detect(image: UploadFile):
+    if image.filename.split(".")[-1] not in ('jpg', 'jpeg', 'png', 'gif', 'svg', 'bmp', 'webp', 'tiff'):
+        raise HTTPException(
+            status_code=415, detail="Not an image"
+        )
+
+    return {"response": "I'am working just fine."}
+
+class ChatBotRequest(BaseModel):
+    message: str
+
+@app.post("/chatBot")
+async def detect(request: ChatBotRequest):
+    return { "response": "I'am working just fine and here is your message:\n"+ request.message }
