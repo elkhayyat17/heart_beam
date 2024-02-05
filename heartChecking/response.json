@@ -1,0 +1,27 @@
+{
+    "murmur": {
+        "label": "Murmur",
+        "description": "This means that the heart sound is caused by an abnormal vibration of the heart valves or chambers, which may be due to various conditions such as valve disease, congenital defects, infections, or tumors. The medical advice for this category depends on the type and location of the murmur, as well as the presence of any symptoms or complications.&nbsp;Some possible treatments are medications, surgery, or catheter-based procedures to correct or improve the function of the affected valve or chamber.",
+        "advice": "Please consult a doctor for a thorough evaluation of the condition. Additional tests such as echocardiogram or other tests may be required to determine the cause of the problem and direct treatment if necessary."
+    },
+    "artifact": {
+        "label": "Artifact",
+        "description": "This means that the heart sound is distorted or interfered by external noise sources such as electrical devices, breathing movements, or muscle contractions. The medical advice for this category depends on whether there are any other signs of cardiac problems such as chest pain, shortness of breath, dizziness, or fainting. If there are no other symptoms and no evidence of structural damage to the heart, there is no need for any specific medical advice.&nbsp;However, if there are other symptoms or signs of cardiac problems, it is important to seek immediate medical attention.",
+        "advice": ""
+    },
+    "extraHeartSound": {
+        "label": "ExtraHeartSound",
+        "description": "Extra heart sound</strong>: This means that there is an additional sound in the heart that is not part of the normal cardiac cycle, which may be due to various conditions such as pericarditis, pleural effusion, pneumothorax, or cardiac tamponade. The medical advice for this category depends on the cause and severity of the extra sound.&nbsp;Some possible treatments are antibiotics for infections, drainage for fluid accumulation, surgery for air leakage or pressure buildup.",
+        "advice": "Please consult a doctor for accurate evaluation and diagnosis. Tests used to identify additional heart sounds include electrocardiogram (ECG), echocardiogram, and various other tests depending on the case."
+    },
+    "extrasystole": {
+        "label": "Extrasystole",
+        "description": "a type of heart rhythm disorder characterized by additional electrical stimulation occurring outside the normal rhythm of the heart. This results in irregular and sudden contractions. While extrasystoles are often minor and not harmful, they can be associated with certain health conditions. Possible causes include heart irritation due to factors like caffeine, smoking, or medications, electrical disorders (arrhythmias) such as ventricular arrhythmia, cardiomyopathy, high blood pressure, thyroid disorders like hyperthyroidism, and potassium deficiency (hypokalemia).",
+        "advice": ""
+    },
+    "normal": {
+        "label": "Normal",
+        "description": "This means that the heart sound is consistent with a healthy heart and does not indicate any problem with the heart valves or chambers. There is no need for any specific medical advice, except to maintain a healthy lifestyle and regular check-ups.",
+        "advice": ""
+    }
+}

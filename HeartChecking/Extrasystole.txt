@@ -1,3 +1,0 @@
-<ul>
-<li><strong>Extrasystole :</strong> a type of heart rhythm disorder characterized by additional electrical stimulation occurring outside the normal rhythm of the heart. This results in irregular and sudden contractions. While extrasystoles are often minor and not harmful, they can be associated with certain health conditions. Possible causes include heart irritation due to factors like caffeine, smoking, or medications, electrical disorders (arrhythmias) such as ventricular arrhythmia, cardiomyopathy, high blood pressure, thyroid disorders like hyperthyroidism, and potassium deficiency (hypokalemia).</li>
-</ul>
