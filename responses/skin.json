@@ -1,0 +1,37 @@
+{
+    "akiec": {
+        "label": "Actinic keratoses and intraepithelial carcinomae",
+        "description": "this means that These lesions typically appear as rough, scaly patches on the skin, often on areas that are frequently exposed to the sun, such as the face, ears, scalp, neck, arms, and hands. They can vary in color from pink to red or brown and may be flat or raised.",
+        "advice": "If you notice any suspicious or changing skin lesions, it's crucial to consult a dermatologist for evaluation and appropriate management. Early detection and treatment of actinic keratoses can help prevent the progression to skin cancer and promote skin health."
+    },
+    "bcc": {
+        "label": "Basal cell carcinoma",
+        "description": "a common type of skin cancer characterized by slow-growing, locally invasive lesions that typically appear as pearly or translucent bumps on sun-exposed areas of the skin. These lesions may also present as sores that repeatedly heal and reopen or shiny, waxy patches with visible blood vessels. Prevention strategies include sun protection, avoidance of tanning beds, and regular skin checks. Early detection through self-examinations and prompt medical evaluation is crucial for successful treatment.",
+        "advice": "Early detection of basal cell carcinoma is key to successful treatment. If you suspect you may have a BCC or any other type of skin cancer, seek medical attention promptly. Dermatologists can perform a thorough examination and may perform a biopsy to confirm the diagnosis."
+    },
+    "bkl": {
+        "label": "Benign keratosis-like lesions",
+        "description": "This means that these lesions typically appear as small, scaly patches on the skin and are often found in areas exposed to sunlight, such as the face, scalp, and hands. BKLs may be mistaken for AKs due to their similar appearance, but unlike AKs, they do not carry the risk of progressing into skin cancer.",
+        "advice": "If you notice any new or changing skin lesions, including rough, scaly patches resembling actinic keratoses, it's essential to consult a dermatologist for evaluation and appropriate management. While BKLs are benign, it's crucial to rule out other skin conditions, such as AKs or skin cancer, and to address any symptoms or concerns you may have regarding your skin health."
+    },
+    "df": {
+        "label": "Dermatofibroma",
+        "description": "is a benign skin lesion that typically appears as a small, firm, reddish-brown bump on the skin. It commonly occurs on the legs, although it can appear anywhere on the body. Dermatofibromas are usually harmless but may cause itching or tenderness. They are composed of fibrous tissue and often develop in response to minor trauma or injury to the skin. While they don't require treatment unless causing discomfort, they can be surgically removed for cosmetic reasons or if they interfere with daily activities.",
+        "advice": "If you notice any new or changing skin lesions, including bumps or nodules, it's essential to consult a dermatologist for evaluation. While many skin conditions are harmless, it's crucial to rule out any potential concerns and ensure proper care."
+    },
+    "mel": {
+        "label": "Melanoma",
+        "description": "Melanoma often appears as a new mole or a change in an existing mole. It can also develop from normal-appearing skin. Melanomas may have irregular borders, asymmetrical shapes, multiple colors, and a diameter larger than a pencil eraser (6mm). They may itch, bleed, or change in size or color over time.",
+        "advice": "Protect your skin from the sun, avoid indoor tanning, and perform regular skin self-examinations to detect any suspicious changes early. If you notice anything concerning, consult a dermatologist promptly."
+    },
+    "nv": {
+        "label": "Melanocytic nevi",
+        "description": "Melanocytic nevi, or moles, are benign skin growths arising from melanocytes. They vary in appearance, color, and size, often appearing as brown spots or raised bumps. While usually harmless, changes in size, shape, or color should be monitored, as they may indicate skin cancer. Regular skin checks and medical evaluation are important for early detection and management.",
+        "advice": "Perform regular skin self-examinations to monitor for any new or changing moles or lesions. If you notice anything concerning, consult a dermatologist promptly for evaluation and appropriate management. Early detection is key to effectively managing skin health."
+    },
+    "vasc": {
+        "label": "pyogenic granulomas and hemorrhage",
+        "description": "also known as lobular capillary hemangiomas, are small, benign growths that often appear as rapidly growing, red or purple, raised bumps on the skin or mucous membranes. Despite the name, they are not true granulomas and are not caused by infection. Instead, they result from an excessive growth of blood vessels in response to minor injury, hormonal changes, or certain medications. Pyogenic granulomas can bleed easily and may ulcerate, causing discomfort or pain. While they can occur anywhere on the body, they are most commonly found on the hands, arms, face, and oral cavity. Treatment typically involves surgical removal or cauterization to prevent bleeding and improve cosmetic appearance.",
+        "advice": "If you notice a rapidly growing red or purple bump on your skin that bleeds easily, seek medical attention promptly for evaluation and treatment to prevent complications."
+    }
+}

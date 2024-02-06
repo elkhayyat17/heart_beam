@@ -28,7 +28,7 @@ async def detect(voice: UploadFile):
     audio, sample_rate = librosa.load(io.BytesIO(audio_bytes), sr=None)
     prediction = await predict(audio, sample_rate)
 
-    response = json.load(open("heartChecking/response.json"))
+    response = json.load(open("responses/heart.json"))
 
     match prediction:
         case "murmur":
@@ -53,7 +53,24 @@ async def detect(image: UploadFile):
 
     prediction = await  Diagnose(image.file.read())
 
-    return prediction 
+    response = json.load(open("responses/skin.json"))
+
+    match prediction:
+            case "akiec":
+                return response["akiec"]
+            case "bcc":
+                return response["bcc"]
+            case "bkl":
+                return response["bkl"]
+            case "df": 
+                return response["df"]
+            case "mel":
+                return response["mel"]
+            case "nv":
+                return response["nv"]
+            case "vasc":
+                return response["vasc"]
+
 
 class ChatBotRequest(BaseModel):
     message: str
