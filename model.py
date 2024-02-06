@@ -2,6 +2,11 @@ import librosa
 import numpy as np
 import tensorflow as tf
 import joblib
+import io
+from PIL import Image
+from keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
 
 model = tf.keras.models.load_model(r"models/best_model.h5")
 encoder = joblib.load(r"models/encoder.h5")
@@ -34,3 +39,40 @@ async def predict(audio, sample_rate):
     predicted_class = encoder.inverse_transform([np.argmax(prediction)])
 
     return predicted_class[0]
+
+
+
+async def Diagnose(image_bytes):
+
+  
+  model_path='models/model2.h5'
+ #model path
+  load_model = tf.keras.models.load_model(model_path)
+  #image path
+  image = Image.open(io.BytesIO(image_bytes))
+
+
+  image_size_g=(64,64)
+  img = image
+  img = img.resize(image_size_g)
+
+  aug=ImageDataGenerator(rescale=1./255)
+  img = img_to_array(img)
+  img = img.reshape((1,) + img.shape)
+  aug_img = aug.flow(img,batch_size=1)
+
+  predicted = load_model.predict(aug_img)
+  prescent = np.amax(predicted.round(decimals=2))
+  predicted_class = np.argmax(predicted.round(decimals=2))
+
+  classes = {0: ('akiec', 'Actinic keratoses and intraepithelial carcinomae'),
+             1: ('bcc' , ' basal cell carcinoma'),
+             2 :('bkl', 'benign keratosis-like lesions'),
+             3: ('df', 'dermatofibroma'),
+             4: ('mel', 'melanoma'),
+             5: ('nv', ' melanocytic nevi'),
+             6: ('vasc', ' pyogenic granulomas and hemorrhage')
+             }
+
+
+  return classes[predicted_class][0]

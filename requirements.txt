@@ -14,3 +14,4 @@ urllib3
 uvicorn
 librosa
 python-multipart
+Pillow

@@ -1,10 +1,12 @@
 import io
 from fastapi import UploadFile, HTTPException, FastAPI
 import librosa
-from model import predict
+from model import predict ,Diagnose 
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import json
+from PIL import Image
+
 
 app = FastAPI(project_name="Dangerous Heartbeat Classification")
 
@@ -47,8 +49,11 @@ async def detect(image: UploadFile):
         raise HTTPException(
             status_code=415, detail="Not an image"
         )
+    # Load the image
 
-    return {"response": "I'am working just fine."}
+    prediction = await  Diagnose(image.file.read())
+
+    return prediction 
 
 class ChatBotRequest(BaseModel):
     message: str
