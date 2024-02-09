@@ -44,35 +44,52 @@ async def predict(audio, sample_rate):
 
 async def Diagnose(image_bytes):
 
+
+  try: 
+
+    model_path='models/model2.h5'
+  #model path
   
-  model_path='models/model2.h5'
- #model path
-  load_model = tf.keras.models.load_model(model_path)
+    load_model = tf.keras.models.load_model(model_path)
   #image path
-  image = Image.open(io.BytesIO(image_bytes))
+    image = Image.open(io.BytesIO(image_bytes))
+
+    if image.mode != "RGB":
+        image = image.convert("RGB")
+        
+        # Save as JPG to a bytes buffer
+        img_data = io.BytesIO()
+        image.save(img_data, format='JPEG')
+        image = Image.open(io.BytesIO(img_data.getvalue()))
 
 
-  image_size_g=(64,64)
-  img = image
-  img = img.resize(image_size_g)
-
-  aug=ImageDataGenerator(rescale=1./255)
-  img = img_to_array(img)
-  img = img.reshape((1,) + img.shape)
-  aug_img = aug.flow(img,batch_size=1)
-
-  predicted = load_model.predict(aug_img)
-  prescent = np.amax(predicted.round(decimals=2))
-  predicted_class = np.argmax(predicted.round(decimals=2))
-
-  classes = {0: ('akiec', 'Actinic keratoses and intraepithelial carcinomae'),
-             1: ('bcc' , ' basal cell carcinoma'),
-             2 :('bkl', 'benign keratosis-like lesions'),
-             3: ('df', 'dermatofibroma'),
-             4: ('mel', 'melanoma'),
-             5: ('nv', ' melanocytic nevi'),
-             6: ('vasc', ' pyogenic granulomas and hemorrhage')
-             }
+    image_size_g=(64,64)
+    img = image
+    img = img.resize(image_size_g)
 
 
-  return classes[predicted_class][0]
+    aug=ImageDataGenerator(rescale=1./255)
+    img = img_to_array(img)
+    img = img.reshape((1,) + img.shape)
+    aug_img = aug.flow(img,batch_size=1)
+
+    predicted = load_model.predict(aug_img)
+    prescent = np.amax(predicted.round(decimals=2))
+    predicted_class = np.argmax(predicted.round(decimals=2))
+
+    classes = {0: ('akiec', 'Actinic keratoses and intraepithelial carcinomae'),
+                1: ('bcc' , ' basal cell carcinoma'),
+                2 :('bkl', 'benign keratosis-like lesions'),
+                3: ('df', 'dermatofibroma'),
+                4: ('mel', 'melanoma'),
+                5: ('nv', ' melanocytic nevi'),
+                6: ('vasc', ' pyogenic granulomas and hemorrhage')
+                
+                }
+
+
+    return classes[predicted_class][0]
+  except Exception as e:
+        print(f"Error converting {image_path}: {e}")
+        return e 
+        
